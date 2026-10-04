@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f7f4">
+    <meta name="description" content="A simple, focused task manager for students.">
+    <title>Study Space — Student Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Study Space home">
+          <span class="brand-mark" aria-hidden="true">s.</span>
+          <span>study<span class="brand-light">space</span></span>
+        </a>
+        <span class="topbar-note"><span class="online-dot" aria-hidden="true"></span> Your personal study planner</span>
+      </header>
+
+      <section class="welcome" aria-labelledby="welcome-title">
+        <div>
+          <p class="eyebrow">YOUR WORKSPACE</p>
+          <h1 id="welcome-title">Make room for <span>what matters.</span></h1>
+          <p class="welcome-copy">A little progress each day adds up to big results.</p>
+        </div>
+        <div class="welcome-art" aria-hidden="true">
+          <span class="art-sparkle">✳</span>
+          <span class="art-book"></span>
+          <span class="art-leaf"></span>
+        </div>
+      </section>
+
+      <section class="summary" aria-label="Task summary">
+        <article class="summary-card">
+          <span class="summary-icon icon-total" aria-hidden="true">▤</span>
+          <div><p>Total tasks</p><strong id="total-count">0</strong></div>
+        </article>
+        <article class="summary-card">
+          <span class="summary-icon icon-pending" aria-hidden="true">◷</span>
+          <div><p>Pending</p><strong id="pending-count">0</strong></div>
+        </article>
+        <article class="summary-card">
+          <span class="summary-icon icon-completed" aria-hidden="true">✓</span>
+          <div><p>Completed</p><strong id="completed-count">0</strong></div>
+        </article>
+      </section>
+
+      <section class="task-panel" aria-labelledby="tasks-title">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">STAY ON TRACK</p>
+            <h2 id="tasks-title">My tasks <span id="visible-count" class="visible-count">0</span></h2>
+          </div>
+          <form id="task-form" class="add-form">
+            <label class="visually-hidden" for="task-input">New task title</label>
+            <input id="task-input" name="title" type="text" maxlength="160" placeholder="e.g. Read chapter 4" autocomplete="off" required>
+            <button class="add-button" type="submit"><span aria-hidden="true">＋</span> Add task</button>
+          </form>
+        </div>
+
+        <div class="task-tools">
+          <div class="filter-group" role="group" aria-label="Filter tasks">
+            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-button" type="button" data-filter="pending" aria-pressed="false">Pending</button>
+            <button class="filter-button" type="button" data-filter="completed" aria-pressed="false">Completed</button>
+          </div>
+          <label class="search-box">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <span class="visually-hidden">Search tasks</span>
+            <input id="search-input" type="search" placeholder="Search tasks..." autocomplete="off">
+            <kbd>/</kbd>
+          </label>
+        </div>
+
+        <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+        <ul id="task-list" class="task-list" aria-label="Tasks"></ul>
+        <div id="empty-state" class="empty-state" hidden>
+          <div class="empty-icon" aria-hidden="true">✎</div>
+          <h3 id="empty-title">Nothing on your list yet</h3>
+          <p id="empty-copy">Add a task above and make today count.</p>
+        </div>
+        <footer class="panel-footer">
+          <span><span class="footer-check" aria-hidden="true">✓</span> One step at a time</span>
+          <span>Saved automatically</span>
+        </footer>
+      </section>
+
+      <footer class="page-footer">Made for your next big idea <span aria-hidden="true">✦</span></footer>
+    </main>
+  </body>
+</html>
